@@ -1,0 +1,174 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Vinay_Newsletterguru>
+            <version>1.2.1</version>
+        </Vinay_Newsletterguru>
+    </modules>
+
+    <frontend>
+        <routers>
+            <newsletter>
+                <args>
+                    <modules>
+                        <Vinay_Newsletterguru before="Mage_Newsletter">Vinay_Newsletterguru</Vinay_Newsletterguru>
+                    </modules>
+                </args>
+            </newsletter>
+        </routers>
+
+        <layout>
+            <updates>
+                <newsletterguru>
+                    <file>newsletterguru.xml</file>
+                </newsletterguru>
+            </updates>
+        </layout>
+
+        <translate>
+            <modules>
+                <Vinay_Newsletterguru>
+                    <files>
+                        <default>Vinay_Newsletterguru.csv</default>
+                    </files>
+                </Vinay_Newsletterguru>
+            </modules>
+        </translate>
+    </frontend>
+   <admin>
+        <routers>
+			<newsletterguru>
+				<use>admin</use>
+				<args>
+					<module>Vinay_Newsletterguru</module>
+					<frontName>newsletterguru</frontName>
+				</args>
+			</newsletterguru>
+        </routers>
+    </admin>
+    <adminhtml>
+	<menu>
+			<newsletterguru module="newsletterguru">
+				<title>Vinay</title>
+				<sort_order>71</sort_order>               
+				<children>
+					<items module="newsletterguru">
+						<title>Manage popup templates</title>
+						<sort_order>0</sort_order>
+						<action>newsletterguru/adminhtml_newsletterguru</action>
+					</items>
+				</children>
+                                <children>
+					<items1 module="newsletterguru">
+						<title>Newsletterguru Popup Settings</title>
+						<sort_order>2</sort_order>
+						<action>adminhtml/system_config/edit/section/newsletter</action>
+					</items1>
+				</children>
+			</newsletterguru>
+		</menu>
+		<acl>
+			<resources>
+				<all>
+					<title>Allow Everything</title>
+				</all>
+				<admin>
+					<children>
+						<Vinay_Newsletterguru>
+							<title>Newsletter Module</title>
+							<sort_order>10</sort_order>
+						</Vinay_Newsletterguru>
+					</children>
+				</admin>
+			</resources>
+		</acl>
+		<layout>
+			<updates>
+				<newsletterguru>
+					<file>newsletterguru.xml</file>
+				</newsletterguru>
+			</updates>
+		</layout>
+
+        <translate>
+            <modules>
+                <Vinay_Newsletterguru>
+                    <files>
+                        <default>Vinay_Adminhtml_Newsletterguru.csv</default>
+                    </files>
+                </Vinay_Newsletterguru>
+            </modules>
+        </translate>
+    </adminhtml>
+
+    <global>
+        <blocks>
+            <newsletterguru>
+                <class>Vinay_Newsletterguru_Block</class>
+            </newsletterguru>
+        </blocks>
+
+        <helpers>
+            <newsletterguru>
+                <class>Vinay_Newsletterguru_Helper</class>
+            </newsletterguru>
+        </helpers>
+
+        <models>
+            <newsletterguru>
+                <class>Vinay_Newsletterguru_Model</class>
+                <resourceModel>newsletterguru_mysql4</resourceModel>
+            </newsletterguru>
+            <newsletterguru_mysql4>
+                <class>Vinay_Newsletterguru_Model_Mysql4</class>
+                <entities>
+                    <newsletterguru>
+                        <table>newsletterguru</table>
+                    </newsletterguru>
+                </entities>
+            </newsletterguru_mysql4>
+           <newsletter>
+                <rewrite>
+                    <subscriber>Vinay_Newsletterguru_Model_Subscriber</subscriber>
+                </rewrite>
+            </newsletter>
+        </models>
+	  <resources>
+            <newsletterguru_setup>
+                <setup>
+                    <module>Vinay_Newsletterguru</module>
+                    <class>Mage_Core_Model_Resource_Setup</class>
+                </setup>
+                <connection>
+                    <use>core_setup</use>
+                </connection>
+            </newsletterguru_setup>
+            <newsletterguru_write>
+                <connection>
+                    <use>core_write</use>
+                </connection>
+            </newsletterguru_write>
+            <newsletterguru_read>
+                <connection>
+                    <use>core_read</use>
+                </connection>
+            </newsletterguru_read>
+        </resources>
+
+    </global>
+
+    <default>
+        <newsletter>
+            <general>
+                <isactive>0</isactive>
+                <jquery>1</jquery>
+                <cookielifetime>60</cookielifetime>
+                <cookiename>vinay_newsletterguru</cookiename>
+                <theme>2</theme>
+                <snow>1</snow>
+                <message>Would you like to be one of the first to receive exclusive information about the latest collections, offers and events from this online shop? Then just subscribe to our free newsletter now and get a voucher to the value of 5 € for your next purchase in our Online-Shop.</message>
+            </general>
+           
+        </newsletter>
+    </default>
+</config>
