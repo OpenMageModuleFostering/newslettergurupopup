@@ -1,16 +1,19 @@
 {
-    "name": "OpenMageModuleFostering/NewsletterguruPopup",
+    "name": "OpenMageModuleFostering\/NewsletterguruPopup",
     "type": "magento-module",
     "license": "OSL-v3.0",
     "homepage": "",
     "description": "The Extension is for showing popup on the landing page of a website with newsletter subscription option on the content.",
     "authors": [
-    {
-        "name": "vinay verma",
-        "email": "vinayverma.march1991@gmail.com"
-    }
-],
+        {
+            "name": "vinay verma",
+            "email": "vinayverma.march1991@gmail.com"
+        }
+    ],
     "suggest": {
-        "magento-hackathon/magento-composer-installer": "*"
-    }
+        "magento-hackathon\/magento-composer-installer": "*"
+    },
+    "keywords": [
+        "openmage-module"
+    ]
 }
