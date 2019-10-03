@@ -1,3 +1,5 @@
+
+
 ## Original Package Description
 
 The Extension is for showing popup on the landing page of a website with newsletter subscription option on the content.
